@@ -3,7 +3,7 @@
 ## Integrantes
 - Melanny Arianna Cordoba Bermudez Cc 1000899222
 - Jerónimo Londoño Madrid Cc 1000412774
-- Nombre Apellido
+- Luis Miguel Carrillo García Cc 1017239239
 - Nombre Apellido
 
 ## Curso
