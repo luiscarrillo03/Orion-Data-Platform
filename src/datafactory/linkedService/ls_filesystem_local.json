@@ -1,0 +1,17 @@
+{
+	"name": "ls_filesystem_local",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "C:\\dataco\\raw",
+			"userId": "renault motriz",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxMDMyODdmNy0yMzQ1LTQzNjgtYjAxYS01ODBlMDMzM2ZiNzkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "ir-dataco-local",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
