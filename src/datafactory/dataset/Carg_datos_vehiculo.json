@@ -1,0 +1,19 @@
+{
+	"name": "Carg_datos_vehiculo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake_dataco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Datos_vehiculos.csv",
+				"folderPath": "GPS",
+				"fileSystem": "raw-zone"
+			}
+		}
+	}
+}
