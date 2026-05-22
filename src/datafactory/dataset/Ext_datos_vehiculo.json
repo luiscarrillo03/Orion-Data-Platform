@@ -1,0 +1,19 @@
+{
+	"name": "Ext_datos_vehiculo",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake_dataco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "3_GPS_dim_vehiculo.csv",
+				"folderPath": "GPS",
+				"fileSystem": "fuentes-datos-origen"
+			}
+		}
+	}
+}
