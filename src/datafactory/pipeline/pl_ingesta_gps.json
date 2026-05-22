@@ -1,0 +1,9 @@
+{
+	"name": "pl_ingesta_gps",
+	"properties": {
+		"folder": {
+			"name": "GPS"
+		},
+		"annotations": []
+	}
+}
