@@ -144,6 +144,18 @@
 						"value": "@activity('Get MetadataVehiculos').output.exists",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "FailMetadatosVehiculo",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "No llegó el archivo de los vehiculos del día",
+								"errorCode": "FILE_NOT_FOUND"
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy datos Vehiculo",
@@ -190,6 +202,48 @@
 							]
 						}
 					]
+				}
+			},
+			{
+				"name": "Validation Vehiculos",
+				"type": "Validation",
+				"dependsOn": [
+					{
+						"activity": "If ConditionFuenteVehiculos",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Carg_datos_vehiculo",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.12:00:00",
+					"sleep": 10
+				}
+			},
+			{
+				"name": "Validation Entregas",
+				"type": "Validation",
+				"dependsOn": [
+					{
+						"activity": "If ConditionFuenteEntregas",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "carg_datos_entrega",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.12:00:00",
+					"sleep": 10
 				}
 			}
 		],
