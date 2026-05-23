@@ -5,6 +5,9 @@
 			"referenceName": "ls_datalake_dataco",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "SALESFORCE"
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
