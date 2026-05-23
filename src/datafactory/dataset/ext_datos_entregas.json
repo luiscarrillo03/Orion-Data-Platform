@@ -5,6 +5,9 @@
 			"referenceName": "ls_datalake_dataco",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "GPS"
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
