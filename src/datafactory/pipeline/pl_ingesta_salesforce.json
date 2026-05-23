@@ -1,0 +1,135 @@
+{
+	"name": "pl_ingesta_salesforce",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get MetadataVentas",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ext_datos_ventas",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"exists"
+					],
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "BinaryReadSettings"
+					}
+				}
+			},
+			{
+				"name": "If ConditionFuenteVentas",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Get MetadataVentas",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"ifFalseActivities": [
+						{
+							"name": "FailMetadataVentas",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "No llegó el archivo de las ventas del día",
+								"errorCode": "FILE_NOT_FOUND"
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "Copy datos ventas",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "BinarySource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true
+									},
+									"formatSettings": {
+										"type": "BinaryReadSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "carg_datos_ventas",
+									"type": "DatasetReference"
+								}
+							]
+						},
+						{
+							"name": "FailCopyVentas",
+							"type": "Fail",
+							"dependsOn": [
+								{
+									"activity": "Copy datos ventas",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "Error copiando el archivo de ventas en el datalake",
+								"errorCode": "COPY_ERROR"
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "Validation Ventas",
+				"type": "Validation",
+				"dependsOn": [
+					{
+						"activity": "If ConditionFuenteVentas",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"timeout": "0.12:00:00",
+					"sleep": 10
+				}
+			}
+		],
+		"folder": {
+			"name": "SALESFORCE"
+		},
+		"annotations": []
+	}
+}

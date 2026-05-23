@@ -1,0 +1,19 @@
+{
+	"name": "carg_datos_ventas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake_dataco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Datos_ventas.csv",
+				"folderPath": "SALESFORCE",
+				"fileSystem": "raw-zone"
+			}
+		}
+	}
+}
