@@ -79,6 +79,18 @@
 						"value": "@activity('Get MetadataEntregas').output.exists",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "FailMetadataEntregas",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "No llego el archivo de entregas el dia de hoy",
+								"errorCode": "FILE_NOT_FOUND"
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy datos Entregas",
@@ -123,6 +135,23 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "FailCopyEntregas",
+							"type": "Fail",
+							"dependsOn": [
+								{
+									"activity": "Copy datos Entregas",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "Error copiando archivo de entregas en el datalake",
+								"errorCode": "COPY_ERROR"
+							}
 						}
 					]
 				}
