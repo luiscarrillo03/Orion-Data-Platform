@@ -229,6 +229,23 @@
 									"type": "DatasetReference"
 								}
 							]
+						},
+						{
+							"name": "FailCopyVehiculo",
+							"type": "Fail",
+							"dependsOn": [
+								{
+									"activity": "Copy datos Vehiculo",
+									"dependencyConditions": [
+										"Failed"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "Error copiando el archivo de vehiculos en el datalake",
+								"errorCode": "COPY_ERROR"
+							}
 						}
 					]
 				}
