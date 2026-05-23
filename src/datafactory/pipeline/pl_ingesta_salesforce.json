@@ -44,6 +44,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@activity('Get MetadataVentas').output.exists",
+						"type": "Expression"
+					},
 					"ifFalseActivities": [
 						{
 							"name": "FailMetadataVentas",
@@ -80,9 +84,21 @@
 										"type": "BinaryReadSettings"
 									}
 								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									}
+								},
 								"enableStaging": false
 							},
 							"inputs": [
+								{
+									"referenceName": "carg_datos_ventas",
+									"type": "DatasetReference"
+								}
+							],
+							"outputs": [
 								{
 									"referenceName": "carg_datos_ventas",
 									"type": "DatasetReference"
