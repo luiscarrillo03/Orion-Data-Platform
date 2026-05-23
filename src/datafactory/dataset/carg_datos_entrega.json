@@ -1,0 +1,19 @@
+{
+	"name": "carg_datos_entrega",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake_dataco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Entregas.csv",
+				"folderPath": "GPS",
+				"fileSystem": "raw-zone"
+			}
+		}
+	}
+}
