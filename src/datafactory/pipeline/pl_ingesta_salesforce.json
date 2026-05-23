@@ -94,7 +94,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "carg_datos_ventas",
+									"referenceName": "ext_datos_ventas",
 									"type": "DatasetReference"
 								}
 							],
