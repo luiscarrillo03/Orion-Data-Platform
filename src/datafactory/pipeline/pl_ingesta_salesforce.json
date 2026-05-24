@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get MetadataVentas",
+				"name": "Get MetadataVisitas",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ext_datos_ventas",
+						"referenceName": "ext_datos_visitas",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -32,11 +33,11 @@
 				}
 			},
 			{
-				"name": "If ConditionFuenteVentas",
+				"name": "If ConditionFuenteVisitas",
 				"type": "IfCondition",
 				"dependsOn": [
 					{
-						"activity": "Get MetadataVentas",
+						"activity": "Get MetadataVisitas",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -45,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('Get MetadataVentas').output.exists",
+						"value": "@activity('Get MetadataVisitas').output.exists",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -62,7 +63,7 @@
 					],
 					"ifTrueActivities": [
 						{
-							"name": "Copy datos ventas",
+							"name": "Copy datos visitas",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -94,7 +95,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ext_datos_ventas",
+									"referenceName": "ext_datos_visitas",
 									"type": "DatasetReference"
 								}
 							],
@@ -110,7 +111,7 @@
 							"type": "Fail",
 							"dependsOn": [
 								{
-									"activity": "Copy datos ventas",
+									"activity": "Copy datos visitas",
 									"dependencyConditions": [
 										"Failed"
 									]
@@ -130,7 +131,7 @@
 				"type": "Validation",
 				"dependsOn": [
 					{
-						"activity": "If ConditionFuenteVentas",
+						"activity": "If ConditionFuenteVisitas",
 						"dependencyConditions": [
 							"Succeeded"
 						]
