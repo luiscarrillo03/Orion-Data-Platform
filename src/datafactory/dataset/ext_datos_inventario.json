@@ -1,5 +1,5 @@
 {
-	"name": "Binary1",
+	"name": "ext_datos_inventario",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_filesystem_local",
