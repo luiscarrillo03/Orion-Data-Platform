@@ -32,7 +32,7 @@
 				}
 			},
 			{
-				"name": "If Condition1",
+				"name": "If ConditionFuenteInventario",
 				"type": "IfCondition",
 				"dependsOn": [
 					{
@@ -130,7 +130,7 @@
 				"type": "Validation",
 				"dependsOn": [
 					{
-						"activity": "If Condition1",
+						"activity": "If ConditionFuenteInventario",
 						"dependencyConditions": [
 							"Succeeded"
 						]
