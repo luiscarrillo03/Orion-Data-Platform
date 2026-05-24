@@ -13,6 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "Datos_ventas.csv",
 				"folderPath": "SAP",
 				"fileSystem": "raw-zone"
 			}
