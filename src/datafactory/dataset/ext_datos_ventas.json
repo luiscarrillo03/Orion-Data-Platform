@@ -5,6 +5,9 @@
 			"referenceName": "ls_filesystem_local",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "SAP"
+		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
