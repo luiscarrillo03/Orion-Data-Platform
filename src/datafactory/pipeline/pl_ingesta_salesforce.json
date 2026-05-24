@@ -51,7 +51,7 @@
 					},
 					"ifFalseActivities": [
 						{
-							"name": "FailMetadataVentas",
+							"name": "FailMetadataVisitas",
 							"type": "Fail",
 							"dependsOn": [],
 							"userProperties": [],
@@ -107,7 +107,7 @@
 							]
 						},
 						{
-							"name": "FailCopyVentas",
+							"name": "FailCopyVisitas",
 							"type": "Fail",
 							"dependsOn": [
 								{
@@ -127,7 +127,7 @@
 				}
 			},
 			{
-				"name": "Validation Ventas",
+				"name": "Validation Visitas",
 				"type": "Validation",
 				"dependsOn": [
 					{
