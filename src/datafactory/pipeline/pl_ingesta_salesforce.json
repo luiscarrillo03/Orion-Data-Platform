@@ -56,7 +56,7 @@
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"message": "No llegó el archivo de las ventas del día",
+								"message": "No llegó el archivo de las visitas del día",
 								"errorCode": "FILE_NOT_FOUND"
 							}
 						}
@@ -119,7 +119,7 @@
 							],
 							"userProperties": [],
 							"typeProperties": {
-								"message": "Error copiando el archivo de ventas en el datalake",
+								"message": "Error copiando el archivo de visitas en el datalake",
 								"errorCode": "COPY_ERROR"
 							}
 						}

@@ -1,0 +1,19 @@
+{
+	"name": "carg_datos_inventario",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake_dataco",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "Datos_inventario.csv",
+				"folderPath": "ORACLE",
+				"fileSystem": "raw-zone"
+			}
+		}
+	}
+}
