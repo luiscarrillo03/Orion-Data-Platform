@@ -30,6 +30,19 @@
 						"type": "BinaryReadSettings"
 					}
 				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Get MetadataInventario",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": []
 			}
 		],
 		"folder": {
