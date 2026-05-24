@@ -44,6 +44,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"expression": {
+						"value": "@activity('Get MetadataInventario').output.exists",
+						"type": "Expression"
+					},
 					"ifFalseActivities": [
 						{
 							"name": "FailMetadataInventarios",
@@ -112,7 +116,11 @@
 									]
 								}
 							],
-							"userProperties": []
+							"userProperties": [],
+							"typeProperties": {
+								"message": "Error copiando el archivo de inventario en el datalake",
+								"errorCode": "COPY_ERROR"
+							}
 						}
 					]
 				}
