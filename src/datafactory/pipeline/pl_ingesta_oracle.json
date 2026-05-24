@@ -44,6 +44,18 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"ifFalseActivities": [
+						{
+							"name": "FailMetadataInventarios",
+							"type": "Fail",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"message": "No llegó el archivo de las inventario del día",
+								"errorCode": "FILE_NOT_FOUND"
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "Copy datos Inventario",
@@ -96,7 +108,7 @@
 								{
 									"activity": "Copy datos Inventario",
 									"dependencyConditions": [
-										"Succeeded"
+										"Failed"
 									]
 								}
 							],
@@ -118,6 +130,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"dataset": {
+						"referenceName": "carg_datos_inventario",
+						"type": "DatasetReference"
+					},
 					"timeout": "0.12:00:00",
 					"sleep": 10
 				}
