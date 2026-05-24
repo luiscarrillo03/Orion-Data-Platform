@@ -189,7 +189,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@activity('Get MetadataInventario').output.exists",
+						"value": "@activity('Get MetadataBodega').output.exists",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
