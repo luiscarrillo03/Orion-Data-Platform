@@ -138,6 +138,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"dataset": {
+						"referenceName": "carg_datos_ventas",
+						"type": "DatasetReference"
+					},
 					"timeout": "0.12:00:00",
 					"sleep": 10
 				}
