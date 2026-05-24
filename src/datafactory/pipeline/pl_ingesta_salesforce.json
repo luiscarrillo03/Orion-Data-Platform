@@ -101,7 +101,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "carg_datos_ventas",
+									"referenceName": "carg_datos_visitas",
 									"type": "DatasetReference"
 								}
 							]
@@ -140,7 +140,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "carg_datos_ventas",
+						"referenceName": "carg_datos_visitas",
 						"type": "DatasetReference"
 					},
 					"timeout": "0.12:00:00",

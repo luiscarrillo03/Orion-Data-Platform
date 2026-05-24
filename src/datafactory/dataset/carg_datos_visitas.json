@@ -1,5 +1,5 @@
 {
-	"name": "carg_datos_ventas",
+	"name": "carg_datos_visitas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_datalake_dataco",
