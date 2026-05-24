@@ -1,0 +1,24 @@
+{
+	"name": "trg_extraccion_carga_datos_ORACLE",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingesta_oracle",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2026-05-24T01:52:00",
+				"timeZone": "SA Pacific Standard Time"
+			}
+		}
+	}
+}
