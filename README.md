@@ -58,8 +58,8 @@ La solución implementada sigue una arquitectura moderna de analítica basada en
 |---|---|
 | Azure Data Factory | Orquestación e ingesta ETL |
 | Azure Data Lake Storage Gen2 | Almacenamiento RAW y CURATED |
-| Unity Catalog (Databricks) | Procesamiento y transformación Spark |
-| Azure SQL Database | Data Warehouse analítico |
+| Azure Databricks | Procesamiento y transformación Spark |
+| Azure Unity Catalog (Databricks)| Data Warehouse analítico |
 | Power BI Desktop | Dashboards y visualización |
 
 ---
